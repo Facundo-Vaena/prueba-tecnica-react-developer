@@ -16,7 +16,6 @@ Pondremos el foco en obtener un **código simple, bien diseñado y organizado, e
 
 > Se pueden utilizar herramientas como [create-react-app](https://github.com/facebookincubator/create-react-app) y similares para inicializar el proyecto.
 
-
 ## Prueba técnica
 Usando las pantallas proporcionadas como referencia, deberá crear un conjunto de pantallas y componentes React para crear la aplicación solicitada.
 
@@ -48,7 +47,6 @@ Puede suponer que no tiene que admitir navegadores heredados sin funciones como 
 ### Página de “Inicio”
 
 > Ejemplo de referencia [screens/1-home.jpg](./screens/1-home.jpg).
-
 Esta será su pantalla index.html.
 
 Deberá mostrar 2 bloques que conectarán con las páginas de "Series" y "Películas".
@@ -57,7 +55,6 @@ Deberá mostrar 2 bloques que conectarán con las páginas de "Series" y "Pelíc
 ### Páginas de “Serie” y “Películas”
 
 > Ejemplo de referencia [screens/2-series.jpg](./screens/2-series.jpg) y [screens/3-movies.jpg](./screens/3-movies.jpg).
-
 Para cada página debería leer los datos desde el archivo JSON [feed/sample.json](https://raw.githubusercontent.com/StreamCo/react-coding-challenge/master/feed/sample.json), luego:
 
 - Mostrar los primeros 20 resultados (`entries`)
@@ -105,5 +102,4 @@ Importante saber:
 
 
 > Happy coding!
-
 <img src="https://user-images.githubusercontent.com/5693916/30273942-84252588-96fb-11e7-9420-5516b92cb1f7.gif" width="100">
