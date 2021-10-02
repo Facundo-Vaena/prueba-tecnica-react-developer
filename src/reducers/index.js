@@ -1,7 +1,8 @@
-import { GET_INFO } from "../actions";
+import { GET_INFO, SET_DETAIL } from "../actions";
 
 const initialState = {
     info: false,
+    selectedProgram: false,
 }
 
 export default function rootReducer(state = initialState, action) {
@@ -12,6 +13,11 @@ export default function rootReducer(state = initialState, action) {
                 ...state,
                 info: {...action.payload},
             }
+        case SET_DETAIL:
+            return {
+                ...state,
+                selectedProgram: action.payload,
+            }    
         default: return state;
     }
 }

@@ -27,7 +27,7 @@ export function Home({ info, getInfo }) {
                     onClick={goSeries}
                     hoverable
                     style={{ width: 240, }}
-                    cover={<StyledImg alt="example" src="https://yosoy.red/wp-content/uploads/2021/05/cine.jpg" />}
+                    cover={<StyledImg alt="example" src="https://st2.depositphotos.com/1037987/10994/i/600/depositphotos_109944104-stock-photo-family-watching-tv-at-home.jpg" />}
                 >
                     <Meta title="Popular Series" description="" />
                 </Card>
@@ -35,7 +35,7 @@ export function Home({ info, getInfo }) {
                     onClick={goMovies}
                     hoverable
                     style={{ width: 240, }}
-                    cover={<StyledImg alt="example" src="https://st2.depositphotos.com/1037987/10994/i/600/depositphotos_109944104-stock-photo-family-watching-tv-at-home.jpg" />}
+                    cover={<StyledImg alt="example" src="https://yosoy.red/wp-content/uploads/2021/05/cine.jpg" />}
                 >
                     <Meta title="Popular Movies" description="" />
                 </Card>,

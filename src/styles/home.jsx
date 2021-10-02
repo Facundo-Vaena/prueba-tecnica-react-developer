@@ -18,4 +18,9 @@ export const StyledContent = styled.div`
 `;
 
 
+export const StyledImgProgram = styled.img`
+height:300px;
+`;
+
+
 // display: 'flex', flexDirection:'column', alignItems: 'center', paddingTop: '50px', paddingBottom: '50px', gap:'20px' 

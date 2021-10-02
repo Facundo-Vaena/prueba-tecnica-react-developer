@@ -2,6 +2,8 @@ import axios from 'axios';
 
 
 export const GET_INFO = 'GET_INFO';
+export const SET_DETAIL = 'SET_DETAIL';
+
 
 const baseURL = 'https://raw.githubusercontent.com/StreamCo/react-coding-challenge/master/feed/sample.json'
 
@@ -29,4 +31,10 @@ function sortingProgram(arr) {
         else if(a.title.toString()[0] < b.title.toString()[0]) return -1;
         else return 0;
     })
+}
+
+export function setDetail(arg) {
+    return function(dispatch) {
+        dispatch({type:SET_DETAIL, payload: arg});
+    }
 }

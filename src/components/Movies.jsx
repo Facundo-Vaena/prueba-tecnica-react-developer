@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Header from './Header'
 import Footer from './Footer'
-import { StyledContent, StyledImg } from '../styles/home'
+import { StyledContent, StyledImg, StyledImgProgram } from '../styles/home'
 import { Card } from 'antd';
 
 const { Meta } = Card;
@@ -12,9 +12,12 @@ export function Movies({ info }) {
 
     let randomKey = 0;
 
-    useEffect(() => {
-        console.log(info.movies)
-    }, [])
+    const history = useHistory()
+    const goDetail = () =>{history.push('/detail')}
+
+    // useEffect(() => {
+    //     console.log(info.movies)
+    // }, [])
 
 
     return (<div>
@@ -23,13 +26,13 @@ export function Movies({ info }) {
             <Link to='/'>Volver</Link>
             <h1>Popular Movies</h1>
             {
-                info.movies.slice(0, 20).map(movie => {
+                info.movies?.slice(0, 20).map(movie => {
                     return (
                         <Card
                             key={randomKey++}
                             hoverable
                             style={{ width: 240, }}
-                            cover={<StyledImg alt="example" src="https://yosoy.red/wp-content/uploads/2021/05/cine.jpg" />}
+                            cover={<StyledImgProgram alt="example" src={movie.images["Poster Art"].url} />}
                         >
                             <Meta title={movie.title} description="" />
                         </Card>
