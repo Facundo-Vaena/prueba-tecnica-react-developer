@@ -6,6 +6,13 @@ height:150px;
 
 export const StyledContent = styled.div`
 
+    display: flex;
+    justify-content: flex-start;
+    gap:3%;
+    padding: 7.5% 0 7.5% 0;
+    margin-left: 10%;
+    margin-bottom: 1%;
+
 @media (max-width: 500px){
 
     display: flex;
@@ -13,8 +20,43 @@ export const StyledContent = styled.div`
     align-items: center;
     padding-top: 50px;
     padding-bottom: 50px;
+    margin-right:6%;
     gap: 20px;
 }
+`;
+
+export const StyledContent2 = styled.div`
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width:1310px;
+    gap:3%;
+    padding: 7.5% 0 7.5% 0;
+    margin-left: 15%;
+    margin-bottom: 1%;
+
+@media (max-width: 500px){
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width:345px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin-right:6%;
+    gap: 20px;
+}
+`;
+
+export const ProgramsDiv = styled.div`
+display: flex;
+flex-wrap: wrap;
+gap:3%;
+@media (max-width:500px) {
+    display: block;
+}
+
 `;
 
 

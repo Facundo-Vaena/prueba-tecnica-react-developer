@@ -1,11 +1,12 @@
 import styled from "styled-components";
 
 export const StyledContainer = styled.div`
-background-color:black
+background-color:#332f2f;
+padding-bottom: 2%;
 `;
 
 export const StyledP = styled.p`
-color:white;
+color:rgb(255 255 255 / 60%);
 `;
 
 export const StyledIconContainer = styled.div`
@@ -16,5 +17,22 @@ export const StyledIconContainer = styled.div`
 }
 `;
 
+export const FooterItemsDiv = styled.div`
+    display:flex;
+    gap:1%;
+    margin-left: 8%;
+    @media (max-width:500px) {
+        display: flex;
+        flex-direction: column;
+    }
+`;
 
+export const CopyrightDiv = styled.div`
+display: flex;
+margin-left: 8%;
+@media (max-width:500px) {
+    justify-content:center;
+    margin-left:0;
+}
+`;
 

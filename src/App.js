@@ -4,7 +4,6 @@ import { Layout, Menu, Breadcrumb, Typography } from 'antd';
 import Movies from './components/Movies';
 import Series from './components/Series';
 import Home from './components/Home';
-import Detail from './components/Detail';
 // import Header from './components/Header';
 // import Footer from './components/Footer';
 import { BrowserRouter, Route } from 'react-router-dom';
@@ -18,7 +17,6 @@ function App() {
         <Route exact path='/' component={Home} />
         <Route path='/movies' component={Movies} />
         <Route path='/series' component={Series} />
-        <Route path='/detail' component={Detail} />
       </BrowserRouter>
       {/* <Layout className='layout'>
       <Header>Hola</Header>
