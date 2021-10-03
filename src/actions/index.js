@@ -10,7 +10,7 @@ const baseURL = 'https://raw.githubusercontent.com/StreamCo/react-coding-challen
 export function getInfo() {
     return async function (dispatch) {
         const res = await axios(baseURL);
-        console.log('me ejecute');
+
         let info = [...res.data['entries']];
 
         let movies = info.filter(element => {

@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import { Link, useHistory } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Header from './Header'
 import Footer from './Footer'
-import { StyledContent, StyledImg, StyledImgProgram } from '../styles/home'
-import { StyledModalImg, StyledP2 } from '../styles/modal';
-import { Card, Modal, Typography } from 'antd';
+import { StyledImgProgram, StyledContent2, ProgramsDiv } from '../styles/home'
+import { StyledModalImg, StyledP2, StyledModal, } from '../styles/modal';
+import { Card, Typography } from 'antd';
 import { getInfo } from '../actions';
 
 const { Meta } = Card;
@@ -17,28 +16,23 @@ export function Movies({ info, getInfo }) {
 
     let randomKey = 0;
 
-    const history = useHistory()
 
     const modalMethod = (info) => {
         setModalInfo(info);
         setOpenModal(true);
     }
 
-    const goHome = () => {
-        history.push('/');
-    }
-
     useEffect(() => {
         !info && getInfo();
+        // eslint-disable-next-line
     }, [])
 
 
     return (<div>
-        <Header />
-        <StyledContent>
-            <Link to='/'>Volver</Link>
-            <h1>Popular Movies</h1>
-            <Modal
+        <Header section='Movies' />
+        <StyledContent2>
+
+            <StyledModal
                 title={modalInfo?.title}
                 visible={openModal}
                 onOk={() => setOpenModal(false)}
@@ -51,28 +45,29 @@ export function Movies({ info, getInfo }) {
                 <div style={{ display: 'flex', justifyContent: 'center' }}>
                     <Text>Release Year: {modalInfo?.releaseYear}</Text>
                 </div>
-            </Modal>
+            </StyledModal>
+            <ProgramsDiv>
+                {
+                    info.movies?.slice(0, 20).map(movie => {
+                        return (
+                            <Card
 
-            {
-                info.movies?.slice(0, 20).map(movie => {
-                    return (
-                        <Card
-                            // onClick={() => goDetail(movie.images["Poster Art"].url)}
-                            onClick={() => modalMethod({
-                                title: movie.title, description: movie.description,
-                                releaseYear: movie.releaseYear, img: movie.images["Poster Art"].url
-                            })}
-                            key={randomKey++}
-                            hoverable
-                            style={{ width: 240, }}
-                            cover={<StyledImgProgram alt="example" src={movie.images["Poster Art"].url} />}
-                        >
-                            <Meta title={movie.title} description="" />
-                        </Card>
-                    )
-                })
-            }
-        </StyledContent>
+                                onClick={() => modalMethod({
+                                    title: movie.title, description: movie.description,
+                                    releaseYear: movie.releaseYear, img: movie.images["Poster Art"].url
+                                })}
+                                key={randomKey++}
+                                hoverable
+                                style={{ width: 240, }}
+                                cover={<StyledImgProgram alt="example" src={movie.images["Poster Art"].url} />}
+                            >
+                                <Meta title={movie.title} description="" />
+                            </Card>
+                        )
+                    })
+                }
+            </ProgramsDiv>
+        </StyledContent2>
         <Footer />
     </div>)
 }

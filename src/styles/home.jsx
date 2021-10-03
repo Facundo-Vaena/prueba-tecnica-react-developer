@@ -1,11 +1,10 @@
 import styled from 'styled-components';
-
 export const StyledImg = styled.img`
 height:150px;
 `;
 
-export const StyledContent = styled.div`
 
+export const StyledContent = styled.div`
     display: flex;
     justify-content: flex-start;
     gap:3%;
@@ -53,6 +52,8 @@ export const ProgramsDiv = styled.div`
 display: flex;
 flex-wrap: wrap;
 gap:3%;
+margin-top: -6%;
+margin-bottom: -8%;
 @media (max-width:500px) {
     display: block;
 }

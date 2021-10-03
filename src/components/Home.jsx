@@ -17,11 +17,12 @@ export function Home({ info, getInfo }) {
 
     useEffect(() => {
         !info && getInfo();
+        // eslint-disable-next-line
     }, []);
 
     return (
         <div>
-            <Header />
+            <Header section='Titles'/>
             <StyledContent>
                 <Card
                     onClick={goSeries}
