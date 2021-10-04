@@ -65,5 +65,15 @@ export const StyledImgProgram = styled.img`
 height:300px;
 `;
 
+export const StyledMessage = styled.p`
+display: flex;
+justify-content: flex-start;
+margin-left: 15%;
+margin-top: auto.5%;
+padding-bottom: 386px;
+@media (max-width:500px) {
+    margin-left:28%;
+}
+`;
 
-// display: 'flex', flexDirection:'column', alignItems: 'center', paddingTop: '50px', paddingBottom: '50px', gap:'20px' 
+//display:'flex', justifyContent:'flex-start', marginLeft:'15%', marginTop:'.5%', paddingBottom:'386px'}}>Oops, something went wrong...</p>

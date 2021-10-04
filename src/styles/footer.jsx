@@ -17,7 +17,7 @@ export const StyledIconContainer = styled.div`
 @media (max-width: 500px) {
     display:flex;
     margin: 3%;
-    margin-left:15%;
+    margin-left:10%;
 }
 `;
 
@@ -50,8 +50,7 @@ gap:3%;
 @media (max-width:500px) {
 margin-top:6%;
 justify-content: center;
-/* margin-right:3%; */
-
+margin-left: 7%;
 }
 `;
 

@@ -25,26 +25,33 @@ export function Series({ info, getInfo }) {
     useEffect(() => {
         !info && getInfo();
         // eslint-disable-next-line
-    }, []);
+    }, [info]);
 
     return (<div>
         <Header section='Series' />
+
         <StyledContent2>
-            
+
             <StyledModal
                 title={modalInfo?.title}
                 visible={openModal}
                 onOk={() => setOpenModal(false)}
                 onCancel={() => setOpenModal(false)}
             >
+
                 <div style={{ marginBottom: '2%', backgroundColor: '#80808091', borderRadius: '2%' }}>
                     <StyledModalImg src={modalInfo?.img} alt="" />
                 </div>
+                
                 <StyledP2>{modalInfo?.description}</StyledP2>
+
                 <div style={{ display: 'flex', justifyContent: 'center' }}>
+
                     <Text>Release Year: {modalInfo?.releaseYear}</Text>
                 </div>
+
             </StyledModal>
+
             <ProgramsDiv>
                 {info.series?.slice(0, 20).map(serie => {
 
@@ -67,7 +74,9 @@ export function Series({ info, getInfo }) {
                 })
                 }
             </ProgramsDiv>
+
         </StyledContent2>
+
         <Footer />
 
     </div>)

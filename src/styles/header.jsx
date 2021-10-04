@@ -20,7 +20,7 @@ export const StyledTitle2 = styled.h1`
 color: white;
 display: flex;
 justify-content: flex-start;
-margin-left: 16%;
+margin-left: 15%;
 margin-top:1%;
 @media (max-width:500px) {
 display: flex;
@@ -29,7 +29,6 @@ margin-left: 0;
 margin-top: 0;
 };
 `;
-//color:'white', marginLeft:'15%', marginTop:'1%'
 export const StyledHeader1 = styled.div`
 background-color:#0845a7;
 -webkit-box-shadow: inset 110px 117px 149px 7px rgba(255,255,255,0.24);
@@ -40,7 +39,6 @@ box-shadow: inset 110px 117px 149px 7px rgba(255,255,255,0.24);
 
 }
 `;
-//background-color: blue;
 export const StyledHeader2 = styled.div`
 background-color: #332f2f;
 

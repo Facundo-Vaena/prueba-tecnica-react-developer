@@ -25,11 +25,12 @@ export function Movies({ info, getInfo }) {
     useEffect(() => {
         !info && getInfo();
         // eslint-disable-next-line
-    }, [])
+    }, [info])
 
 
     return (<div>
         <Header section='Movies' />
+
         <StyledContent2>
 
             <StyledModal
@@ -38,14 +39,19 @@ export function Movies({ info, getInfo }) {
                 onOk={() => setOpenModal(false)}
                 onCancel={() => setOpenModal(false)}
             >
+                
                 <div style={{ marginBottom: '2%', backgroundColor: '#80808091', borderRadius: '2%' }}>
                     <StyledModalImg src={modalInfo?.img} alt="" />
                 </div>
+                
                 <StyledP2>{modalInfo?.description}</StyledP2>
+                
                 <div style={{ display: 'flex', justifyContent: 'center' }}>
                     <Text>Release Year: {modalInfo?.releaseYear}</Text>
                 </div>
+            
             </StyledModal>
+            
             <ProgramsDiv>
                 {
                     info.movies?.slice(0, 20).map(movie => {
@@ -67,7 +73,10 @@ export function Movies({ info, getInfo }) {
                     })
                 }
             </ProgramsDiv>
+
+
         </StyledContent2>
+
         <Footer />
     </div>)
 }

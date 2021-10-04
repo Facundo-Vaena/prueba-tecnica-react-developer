@@ -1,23 +1,22 @@
-import { GET_INFO, SET_DETAIL } from "../actions";
+import { GET_INFO } from "../actions";
 
 const initialState = {
     info: false,
-    selectedProgram: false,
 }
 
 export default function rootReducer(state = initialState, action) {
     switch(action.type) {
         case GET_INFO: 
             
-            return {
+            return action.payload !== 'Error' ? {
                 ...state,
                 info: {...action.payload},
             }
-        case SET_DETAIL:
-            return {
+            :
+            {
                 ...state,
-                selectedProgram: action.payload,
-            }    
+                info: 'Error',
+            }
         default: return state;
     }
 }

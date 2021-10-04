@@ -2,25 +2,33 @@ import axios from 'axios';
 
 
 export const GET_INFO = 'GET_INFO';
-export const SET_DETAIL = 'SET_DETAIL';
 
 
 const baseURL = 'https://raw.githubusercontent.com/StreamCo/react-coding-challenge/master/feed/sample.json'
 
 export function getInfo() {
     return async function (dispatch) {
-        const res = await axios(baseURL);
 
-        let info = [...res.data['entries']];
+        try {
 
-        let movies = info.filter(element => {
-            return element['programType'] === 'movie';
-        })
-        let series = info.filter(element => {
-            return element['programType'] === 'series';
-        })
-
-        dispatch({ type: GET_INFO, payload: { movies: sortingProgram(movies), series: sortingProgram(series) } });
+            
+            const res = await axios(`${baseURL}`);
+            
+            let info = [...res.data['entries']];
+            
+            let movies = info.filter(element => {
+                return element['programType'] === 'movie';
+            })
+            let series = info.filter(element => {
+                return element['programType'] === 'series';
+            })
+            
+            
+            dispatch({ type: GET_INFO, payload: { movies: sortingProgram(movies), series: sortingProgram(series) } });
+        
+        } catch(err) {
+            dispatch({type: GET_INFO, payload: 'Error'});
+        }
     }
 }
 
@@ -32,10 +40,4 @@ function sortingProgram(arr) {
         else return 0;
     })
     return newArray.filter(program => program.releaseYear >= 2010);
-}
-
-export function setDetail(arg) {
-    return function (dispatch) {
-        dispatch({ type: SET_DETAIL, payload: arg });
-    }
 }

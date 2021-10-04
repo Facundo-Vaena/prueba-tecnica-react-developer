@@ -20,7 +20,7 @@ export default function Header({ section }) {
             </StreamingDiv>
         </StyledHeader1>
         <StyledHeader2>
-            <StyledTitle2>Popular {section}</StyledTitle2>
+            <StyledTitle2 data-testid='abc'>Popular {section}</StyledTitle2>
         </StyledHeader2>
     </HeaderContainer>
     )
